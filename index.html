@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="dist/interface.js" defer></script>
+    <script src="dist/class.js" defer></script>
+    <script src="dist/app.js" defer></script>
+    <script src="dist/search.js" defer></script>
+    <script src="dist/Lista.js" defer></script>
+    <script src="dist/getaxas.js" defer></script>
+
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+
+
+
+<body>
+    <header>
+        <div>
+            <h1>Comex Fin</h1>
+        </div>
+    </header>
+
+    <form id='form1'  name="tab1">
+        <div class="flex-container ">
+            <div class="tab01">
+                
+                <div class="form01">
+                    <label for="client">Cliente</label>
+                    <select id=client onchange="getClient(event)">
+                        <option>Cliente 01</option>
+                        <option>Cliente 02</option>
+                        <option>Cliente 03</option>
+                    </select>
+                </div>
+    
+                <div class="form01">
+                    <label for="dataCambio">Data Cambio</label>
+                    <input id="dtCambio" placeholder="dt" type="text" onchange="getTaxas(event)">
+                </div>
+
+                <div class="form01">
+                    <label for="Moeda Cliente">Moeda Cliente</label>
+                    <select id=moedCiente onchange="getMoedCiente(event)" >
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Real</option>
+                    </select>
+                </div>
+
+                <div class="form01">
+                    <label for="moedFretInter">Moeda Frete Internacional</label>
+                    <select id=moedFretInter onchange="getMoedFretInter(event)">  
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Real</option>
+                    </select>
+                </div>
+
+                <div class="form01">
+                    <label for="fretInter">Valor KG Frete Internacional</label>
+                    <input id="fretInter" placeholder="$" type="number" onchange="getFretInter(event)">
+                </div>
+    
+                <div class="form01">
+                    <label for="moedFretRod">Moeda Frete Rodoviario</label>
+                    <select id=moedFretRod onchange="getMoedFretRod(event)">  
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Real</option>
+                    </select>
+                </div>
+
+                <div class="form01">
+                    <label for="fretRod">Valor KG Frete Rodoviario</label>
+                    <input id="fretRod" placeholder="$" type="number" onchange="getFretRod(event)">
+                </div>
+    
+                    <!-- 
+                    
+                   
+                    <input id="senha" placeholder="Senha" type="password" onchange="preencherSenha(event)">
+                    <input id="api-key" placeholder="Api Key" onchange="preencherApi()">
+                    <button id="login-button" disabled>Login</button>
+                
+    
+                <div class="pt">
+                <div class="lista">
+                    <input id="idLista" placeholder="Nome da lista...">
+                    <button id="buscaLista">Busca lista</button>
+                    <button id="criaLista">Criar lista</button>
+                </div>
+    
+                <div classs="pt" id="search-container" style="margin-left: 20px">                
+                    <input id="search" placeholder="Escreva...">
+                    <button id="search-button">Pesquisar Filme</button>
+                </div>
+                </div> -->
+    
+    
+    
+            </div>
+
+            <div class="tab01" id="taxas">
+                <div class="form01">
+                    <label for="txDolar">Taxa Dolar</label>
+                    <input id="txDolar" type="number">
+                </div>
+                <div class="form01">
+                    <label for="txEuro">Taxa Euro</label>
+                    <input id="txEuro" type="number">
+                </div>
+
+                <div class="form01">
+                    <button id="getTaxaButton">Atualizar Taxa</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <div id="filmes">
+        <!--<ul>
+            <li>
+                <div class="titulo">
+                    teste
+                </div>
+                <div class="poster">
+                    <img src="./assets/" alt="">
+                </div>
+            </li>
+            <li>
+                <div class="titulo">
+                    teste
+                </div>
+                <div class="poster">
+                    <img src="./assets/poster.jpg" alt="">
+                </div>
+            </li>
+            <li>
+                <div class="titulo">
+                    teste
+                </div>
+                <div class="poster">
+                    <img src="./assets/poster.jpg" alt="">
+                </div>
+            </li>
+        </ul>-->
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; 2022 CSS Flexbox</p>
+        <p>Desenvolvido por: Alberto Gonçalves</p>
+    </footer>
+    
+</body>
+
+</html>
