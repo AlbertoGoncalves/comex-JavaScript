@@ -7,10 +7,8 @@
     <title>Document</title>
     <script src="dist/interface.js" defer></script>
     <script src="dist/class.js" defer></script>
-    <script src="dist/app.js" defer></script>
-    <script src="dist/search.js" defer></script>
-    <script src="dist/Lista.js" defer></script>
     <script src="dist/getaxas.js" defer></script>
+    <script src="dist/exFunction.js" defer></script>
 
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
@@ -25,12 +23,12 @@
     </header>
 
     <form id='form1'  name="tab1">
-        <div class="flex-container ">
+        <div class="flex-sec01 ">
             <div class="tab01">
                 
                 <div class="form01">
                     <label for="client">Cliente</label>
-                    <select id=client onchange="getClient(event)">
+                    <select id=client onchange="getCampos('client')">
                         <option>Cliente 01</option>
                         <option>Cliente 02</option>
                         <option>Cliente 03</option>
@@ -39,45 +37,19 @@
     
                 <div class="form01">
                     <label for="dataCambio">Data Cambio</label>
-                    <input id="dtCambio" placeholder="dt" type="text" onchange="getTaxas(event)">
+                    <input id="dtCambio" placeholder="dt" type="text" onchange="getCampos('dtCambio')">
                 </div>
 
                 <div class="form01">
                     <label for="Moeda Cliente">Moeda Cliente</label>
-                    <select id=moedCiente onchange="getMoedCiente(event)" >
+                    <select id=moedCiente onchange="getCampos('moedCiente')" >
                         <option>Dolar</option>
                         <option>Euro</option>
                         <option>Real</option>
                     </select>
                 </div>
 
-                <div class="form01">
-                    <label for="moedFretInter">Moeda Frete Internacional</label>
-                    <select id=moedFretInter onchange="getMoedFretInter(event)">  
-                        <option>Dolar</option>
-                        <option>Euro</option>
-                        <option>Real</option>
-                    </select>
-                </div>
 
-                <div class="form01">
-                    <label for="fretInter">Valor KG Frete Internacional</label>
-                    <input id="fretInter" placeholder="$" type="number" onchange="getFretInter(event)">
-                </div>
-    
-                <div class="form01">
-                    <label for="moedFretRod">Moeda Frete Rodoviario</label>
-                    <select id=moedFretRod onchange="getMoedFretRod(event)">  
-                        <option>Dolar</option>
-                        <option>Euro</option>
-                        <option>Real</option>
-                    </select>
-                </div>
-
-                <div class="form01">
-                    <label for="fretRod">Valor KG Frete Rodoviario</label>
-                    <input id="fretRod" placeholder="$" type="number" onchange="getFretRod(event)">
-                </div>
     
                     <!-- 
                     
@@ -106,6 +78,37 @@
 
             <div class="tab01" id="taxas">
                 <div class="form01">
+                    <label for="moedFretInter">Moeda Frete Internacional</label>
+                    <select id=moedFretInter onchange="getCampos('moedFretInter')">  
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Real</option>
+                    </select>
+                </div>
+
+                <div class="form01">
+                    <label for="fretInter">Valor KG Frete Internacional</label>
+                    <input id="fretInter" placeholder="$" type="number" onchange="getCampos('fretInter')">
+                </div>
+    
+                <div class="form01">
+                    <label for="moedFretRod">Moeda Frete Rodoviario</label>
+                    <select id=moedFretRod onchange="getCampos('moedFretRod')">  
+                        <option>Dolar</option>
+                        <option>Euro</option>
+                        <option>Real</option>
+                    </select>
+                </div>
+
+                <div class="form01">
+                    <label for="fretRod">Valor KG Frete Rodoviario</label>
+                    <input id="fretRod" placeholder="$" type="number" onchange="getCampos('fretRod')">
+                </div>
+            </div>
+
+
+            <div class="tab01" id="taxas">
+                <div class="form01">
                     <label for="txDolar">Taxa Dolar</label>
                     <input id="txDolar" type="number">
                 </div>
@@ -115,7 +118,7 @@
                 </div>
 
                 <div class="form01">
-                    <button id="getTaxaButton">Atualizar Taxa</button>
+                    <button class="getTaxaButton" >Atualizar Taxa</button>
                 </div>
 
             </div>
@@ -124,34 +127,137 @@
 
     </form>
 
-    <div id="filmes">
-        <!--<ul>
-            <li>
-                <div class="titulo">
-                    teste
+    <div class="flex-sec02 ">
+        <div class="tab02 " >
+            <div class="form02 ">
+                <label for="produto">Produto</label>
+                <select id=produto onchange="getCampos('produto')">
+                    <option>Produto 01</option>
+                    <option>Produto 02</option>
+                    <option>Produto 03</option>
+                </select>
+            </div>
+
+            <div class="form02 ">
+                <label for="vlProd">Valor Produto</label>
+                <input id="vlProd" type="number">
+                
+            </div>
+
+            <div class="form02 ">
+                <label for="qtProd">Quant. Prod.</label>
+                <input id="qtProd" type="number">
+            </div>
+
+            <div class="form02 ">
+                <label for="psLiq">Peso Liquido</label>
+                <input id="psLiq" type="number">
+            </div>
+            <div class="form02 ">
+                <label for="psBrut">Peso Bruto</label>
+                <input id="psBrut" type="number">
+            </div>
+
+            <div class="bot">
+                <button class="addProd"><img class="addProd" src="img/plus.png" height ="20" width="20" /></button>
+            </div>        
+        </div>
+
+        <section class="container">
+            <h1>Lista de Produtos</h1>
+
+        
+            <ul class="produtos">
+                <!-- <li>
+                    <div class="tab02">
+                        <div class="form03">
+                            <label for="txEuro">Taxa Euro</label>
+                            <input id="txEuro" type="number">
+                        </div>
+                    </div>
+                </li> -->
+
+            </ul>
+        </section>
+        
+        <section class="container">        
+            <div class="tab02">
+                <!-- <h2>Totais</h2> -->
+                <div class="form03">
+                    <label for="p01">Produto 01</label>
+                    <label for="p02">Produto 02</label>
+                    <label for="p01">Produto 03</label>
                 </div>
-                <div class="poster">
-                    <img src="./assets/" alt="">
+
+                <div class="form03">
+                    <label for="q01">Quant. 01</label>
+                    <label for="q02">Quant. 02</label>
+                    <label for="q01">Quant. 03</label>
                 </div>
-            </li>
-            <li>
-                <div class="titulo">
-                    teste
+
+                <div class="form03">
+                    <label for="q01">Frete Inter 01</label>
+                    <label for="q02">Frete Inter 02</label>
+                    <label for="q01">Frete Inter 03</label>
                 </div>
-                <div class="poster">
-                    <img src="./assets/poster.jpg" alt="">
+
+                <div class="form03">
+                    <label for="q01">Frete Rod. 01</label>
+                    <label for="q02">Frete Rod. 02</label>
+                    <label for="q01">Frete Rod. 03</label>
                 </div>
-            </li>
-            <li>
-                <div class="titulo">
-                    teste
+
+                <div class="form03">
+                    <label for="q01">Frete Tot. 01</label>
+                    <label for="q02">Frete Tot. 02</label>
+                    <label for="q01">Frete Tot. 03</label>
                 </div>
-                <div class="poster">
-                    <img src="./assets/poster.jpg" alt="">
+            
+                <div class="form03">
+                    <label for="vt01">Valor Total 01</label>
+                    <label for="vt02">Valor Total 02</label>
+                    <label for="vt01">Valor Total 03</label>
                 </div>
-            </li>
-        </ul>-->
+            
+            </div>
+        </section>  
+
+        <section class="container">        
+            <div class="tab02">
+                <!-- <h2>Totais</h2> -->
+                <div class="form03">
+                    <label for="p01">Quant. Prod.</label>
+                </div>
+
+                <div class="form03">
+                    <label for="q01">Peso Liquido</label>
+                </div>
+
+                <div class="form03">
+                    <label for="q01">Peso Bruto</label>
+                </div>
+
+                <div class="form03">
+                    <label for="q01">Total Frete Internacional</label>
+                </div>
+
+                <div class="form03">
+                    <label for="q01">Total Frete Rodoviario</label>
+                </div>
+            
+                <div class="form03">
+                    <label for="vt01">Total Fretes</label>
+                </div>
+
+                <div class="form03">
+                    <label for="vt01">Valor Total Invoice</label>
+                </div>
+            
+            </div>
+        </section>  
+
     </div>
+
 
 
     <footer class="footer">

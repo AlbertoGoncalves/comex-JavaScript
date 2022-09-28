@@ -14,15 +14,17 @@ header h1{
     padding: 10px;
 }
 
-.flex-container{
+.flex-sec01{
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     padding: 10px;
+    background-color: rgb(241, 241, 241);
+    padding: 10pt;
+    border-radius: 10pt;
 }
 
 .tab01{
-    background-color: rgb(241, 241, 241);
     padding: 10pt;
     border-radius: 10pt;
 }
@@ -36,6 +38,63 @@ header h1{
     flex-direction: column;
     padding: 10px;    
 }
+
+
+
+
+.flex-sec02{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    /* align-items:flex-end; */
+    padding: 10px;
+    background-color: rgb(116, 197, 245);
+    border-radius: 10pt;
+}
+.tab02{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    /* width: 90%; */
+    /* align-items: center; */
+    background-color: rgb(178, 225, 252);
+    border-radius: 10px; 
+    margin: 5px;
+}
+
+.form02{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form03{
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bot{
+    padding: 10px;
+    padding-top: 25px;
+    
+}
+
+
+.produtos{
+    list-style-type:none;
+}
+
+
+
+
+
+
+
+
 
 
 
